@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  driver_id: 1
+  ride_id: 1
+  device_id: 1
+  level: MyString
+  message: MyText
+  settings: MyText
+  location: MyString
+  speed: MyString
+  heading: MyString
+  status: MyString
+
+two:
+  user_id: 1
+  driver_id: 1
+  ride_id: 1
+  device_id: 1
+  level: MyString
+  message: MyText
+  settings: MyText
+  location: MyString
+  speed: MyString
+  heading: MyString
+  status: MyString

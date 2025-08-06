@@ -1,0 +1,41 @@
+<% if params[:notice].present? %>
+  <div style="background-color:blue; color:white ; padding:1em; text-align:center;" id="flash-notice">
+    <%= params[:notice] %>
+  </div>
+<% end %>
+<% if params[:error].present? %>
+  <div style="background-color:red; color:white ; padding:1em; text-align:center;" id="flash-error">
+    <%= params[:error] %>
+  </div>
+<% end %>
+
+
+<% flash.each do |type, msg| %>
+  <div style="background-color:blue; color:white ; padding:1em;" id="flash">
+    <%= msg %>
+  </div>
+<% end %>
+
+
+
+<script>
+
+  setTimeout(function(){
+    var link = document.getElementById('flash');
+      if (link != null){
+        link.style.display = 'none';
+      }
+  }, 3000);
+
+  setTimeout(function(){
+    var link = document.getElementById('flash-notice');
+    var link2 = document.getElementById('flash-error');
+      if (link != null){
+        link.style.display = 'none';
+      }
+      if (link2 != null){
+        link.style.display = 'none';
+      }
+  }, 4000);
+
+</script>

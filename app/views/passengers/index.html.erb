@@ -1,0 +1,61 @@
+<% @page_header =  "Passengers "%>
+<div class="row">
+  <div class="col-lg-12">
+    <div class='card'>
+      <div class='card-header'>
+        <div class='card-title'>
+          <h6>
+            <i class= "fas fa-home"></i>
+            <%= "Passengers" %>
+          </h6>
+        </div>
+      </div>
+      <div class='card-body scrollable'>
+        <table class="table table-condensed table-striped datatable">
+          <thead>
+            <tr>
+                              <th><%= "Ride"  %></th>
+                              <th><%= "Name"  %></th>
+                              <th><%= "Image url"  %></th>
+                              <th><%= "Rating"  %></th>
+                              <th><%= "Driver"  %></th>
+                              <th><%= "Device"  %></th>
+                              <th><%= "Status"  %></th>
+                            <th class='actions-th' ></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @passengers.each do |passenger| %>
+            <tr>
+                              <td><%= passenger.ride_id %></td>
+                              <td><%= passenger.name %></td>
+                              <td><%= passenger.image_url %></td>
+                              <td><%= passenger.rating %></td>
+                              <td><%= passenger.driver_id %></td>
+                              <td><%= passenger.device_id %></td>
+                              <td><%= passenger.status %></td>
+                            <td class="text-end">
+                <div class="dropdown">
+                  <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; עריכה
+                    <a href="#" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; מחיקה
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

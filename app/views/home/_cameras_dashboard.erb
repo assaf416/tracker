@@ -1,0 +1,158 @@
+<div class="row">
+
+  <div class="col-lg-4">
+    <div class="row">
+      <% 2.times do %>
+        <div class="col-lg-6">
+          <%= render "shared/video_panel" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class='card'>
+      <div class='card-header d-sm-flex pt-sm-0 pb-0'>
+        <h6 class='align-self-sm-center mb-sm-0'> כותרת</h6>
+        <div class='ms-sm-auto'>
+          <ul
+            class='nav nav-tabs nav-tabs-highlight card-header-tabs mb-0'
+            role='tablist'
+          >
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab1'
+                class='nav-link active'
+                data-bs-toggle='tab'
+                aria-selected='true'
+                role='tab'
+              >
+                <i class='ph-house me-2'></i>
+                Tickets
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab2'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <i class='ph-chart-bar me-2'></i>
+                Drivers
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab3'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <i class='ph-chart-bar me-2'></i>
+                Devices
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class='card-body tab-content'>
+        <div class='tab-pane fade show active' id='card-tab1' role='tabpanel'>
+              <% @drivers = Driver.all.sample(5) %>
+            <%= render "shared/drivers_short"%>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab2' role='tabpanel'>
+          <%= render "shared/messages_short" %>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab3' role='tabpanel'>
+          <% @devices = Device.all.sample(5)%>
+        <%= render "shared/devices_short" %>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab4' role='tabpanel'>
+          This is the fourth card tab content
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="col-lg-8">
+    
+    <div class='card'>
+      <div class='card-header d-sm-flex pt-sm-0 pb-0'>
+        <h6 class='align-self-sm-center mb-sm-0'> כותרת</h6>
+        <div class='ms-sm-auto'>
+          <ul
+            class='nav nav-tabs nav-tabs-highlight card-header-tabs mb-0'
+            role='tablist'
+          >
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab11'
+                class='nav-link active'
+                data-bs-toggle='tab'
+                aria-selected='true'
+                role='tab'
+              >
+                <i class='ph-map-trifold me-2'></i>
+                Map
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab22'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <i class='ph-chart-bar me-2'></i>
+                הודעות
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab-rides-wide'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <i class='ph-chart-bar me-2'></i>
+              Rides
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class='card-body tab-content'>
+        <div class='tab-pane fade show active' id='card-tab11' role='tabpanel'>
+         <%= render "shared/bare_map" %>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab22' role='tabpanel'>
+        <% @drivers = Driver.all.sample(5) %>
+          <%= render "fancy_drivers"%>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab-rides-wide' role='tabpanel'>
+          <% @rides = Ride.all.sample(5) %>
+          <%= render "fancy_rides"%>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab44' role='tabpanel'>
+          This is the fourth card tab content
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

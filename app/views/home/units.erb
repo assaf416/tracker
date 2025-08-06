@@ -1,0 +1,17 @@
+<div class="row">
+    <% for unit in @units do %>
+  <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header">
+            <%= unit.name %>
+          </div>
+          <div class="card-body">
+            <%= image_tag unit.image_url , :width => "100%"%>
+           </div>
+          <div class="card-footer">
+            Footer
+          </div>
+        </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  user_id: 1
+  name: MyString
+  settings: MyText
+  type: 
+  model: MyString
+  driver_id: 1
+  last_location: MyString
+  last_location_at: 2025-07-31 01:27:04
+  recent_message: MyText
+  system_message: MyText
+  error_id: 1
+  avatar: MyString
+  ssid: MyString
+
+two:
+  kind: MyString
+  user_id: 1
+  name: MyString
+  settings: MyText
+  type: 
+  model: MyString
+  driver_id: 1
+  last_location: MyString
+  last_location_at: 2025-07-31 01:27:04
+  recent_message: MyText
+  system_message: MyText
+  error_id: 1
+  avatar: MyString
+  ssid: MyString

@@ -1,0 +1,24 @@
+<h3>תרגומים</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>עברית</th>
+      <th>אנגלית</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for l in Translation.all do %>
+      <tr>
+
+        <td><%= l.hebrew %></td>
+        <td>
+          <%= form_for l do |f| %>
+            <%= f.text_field :english, class: "form-controll" %>
+            <%= f.submit %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>

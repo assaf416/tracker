@@ -1,0 +1,41 @@
+<div class="card card-body flex-row">
+  <a href="#" class="me-3">
+    <img
+      src="<%= driver.image_url %>"
+      class="rounded-circle"
+      width="44"
+      height="44"
+      alt=""
+    >
+  </a>
+
+  <div class="flex-fill">
+    <h6 class="mb-0"><%= driver.name %></h6>
+    <span class="text-muted"><%= @driver.status%></span>
+  </div>
+
+  <div class="dropdown align-self-center ms-3">
+    <a href="#" class="text-body" data-bs-toggle="dropdown">
+      <i class="ph-list"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end">
+      <a href="#" class="dropdown-item">
+        <i class="ph-chats me-2"></i>
+        Start chat
+      </a>
+      <a href="#" class="dropdown-item">
+        <i class="ph-phone me-2"></i>
+        Make a call
+      </a>
+      <a href="#" class="dropdown-item">
+        <i class="ph-envelope me-2"></i>
+        Send mail
+      </a>
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item">
+        <i class="ph-chart-line me-2"></i>
+        Statistics
+      </a>
+    </div>
+  </div>
+</div>

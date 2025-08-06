@@ -1,0 +1,59 @@
+<% @page_header =  "Tickets "%>
+<div class="row">
+  <div class="col-lg-12">
+    <div class='card'>
+      <div class='card-header'>
+        <div class='card-title'>
+          <h6>
+            <i class= "fas fa-home"></i>
+            <%= "Tickets" %>
+          </h6>
+        </div>
+      </div>
+      <div class='card-body scrollable'>
+        <table class="table table-condensed table-striped datatable">
+          <thead>
+            <tr>
+                              <th><%= "Driver"  %></th>
+                              <th><%= "Kind"  %></th>
+                              <th><%= "Opened at"  %></th>
+                              <th><%= "Closed at"  %></th>
+                              <th><%= "Description"  %></th>
+                              <th><%= "Status"  %></th>
+                            <th class='actions-th' ></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @tickets.each do |ticket| %>
+            <tr>
+                              <td><%= ticket.driver_id %></td>
+                              <td><%= ticket.kind %></td>
+                              <td><%= ticket.opened_at %></td>
+                              <td><%= ticket.closed_at %></td>
+                              <td><%= ticket.description %></td>
+                              <td><%= ticket.status %></td>
+                            <td class="text-end">
+                <div class="dropdown">
+                  <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; עריכה
+                    <a href="#" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; מחיקה
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

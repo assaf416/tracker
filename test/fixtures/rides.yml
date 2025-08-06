@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver_id: 1
+  customer_id: 1
+  from_location: MyString
+  from_address: MyString
+  accpeted_at: 2025-07-31 12:31:27
+  arrived_to_customer_at: 2025-07-31 12:31:27
+  dropped_at: 2025-07-31 12:31:27
+  drop_location: MyString
+  pickup_location: MyString
+  status: MyString
+  error_message: MyText
+
+two:
+  driver_id: 1
+  customer_id: 1
+  from_location: MyString
+  from_address: MyString
+  accpeted_at: 2025-07-31 12:31:27
+  arrived_to_customer_at: 2025-07-31 12:31:27
+  dropped_at: 2025-07-31 12:31:27
+  drop_location: MyString
+  pickup_location: MyString
+  status: MyString
+  error_message: MyText

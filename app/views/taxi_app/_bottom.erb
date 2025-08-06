@@ -1,0 +1,33 @@
+<%= content_for :footer do%>
+<nav
+  class="
+    navbar navbar-light navbar-expand rounded-pill mb-0 ms-1 me-0 fixed-bottom
+    d-md-none d-lg-none d-xl-none
+  "
+  style="sbackground: #0f071f;"
+>
+  <ul class="nav nav-justified w-100">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" href="/taxi_app/driver?v=rides">
+        <span><i class="fa-solid fa-users"></i><br/><%= _t 'Rides ' %></span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" href="/taxi_app/driver?v=drivers">
+        <span><i class="fa-solid fa-user-nurse "></i><br/><%= _t 'Drivers' %></span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" href="/taxi_app/driver?v=messages">
+        <span><i class="fa-solid fa-comments"></i><br/><%= _t 'Messages' %></span>
+      </a>
+    </li>
+   
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" href="/taxi_app/driver?v=settings">
+        <span><i class="fa fa-cogs"></i><br/><%= _t 'Settings' %></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<% end %>

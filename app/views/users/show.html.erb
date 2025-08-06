@@ -1,0 +1,90 @@
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <div class="card tile ">
+        <div class="card-content">
+             <div class="text-center">
+          <div class="is-user-avatar image has-max-width is-aligned-center">
+            <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
+          </div>
+            User
+            </div>
+          <hr>
+          <table class="table is-fullwidth is-stripe">
+          <tbody>
+                        <tr>
+              <td>Name</td>
+              <td><%= @user.name %></td>
+            </tr>
+                         <tr>
+              <td>Role</td>
+              <td><%= @user.role %></td>
+            </tr>
+                         <tr>
+              <td>Email</td>
+              <td><%= @user.email %></td>
+            </tr>
+                         <tr>
+              <td>Phone no</td>
+              <td><%= @user.phone_no %></td>
+            </tr>
+                       </tbody>
+        </table>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+      </div>
+    </div>
+    <div class="column">
+      <div class="tabs">
+        <ul>
+          <li class="is-active"><a>Notes</a></li>
+          <li><a>Emails</a></li>
+          <li><a>Views</a></li>
+          <li><a>Summary</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+  <header class="card-header">
+    <p class="card-header-title">Component</p>
+    <button class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <table class="table is-fullwidth is-stripe">
+          <thead>
+            <tr>
+              <th>שם משפחה</th>
+              <th>שם פרטי</th>
+              <th>כתובת מייל</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>בן דוד</td>
+              <td>אהרונוביץ</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>בן דוד</td>
+              <td>אהרונוביץ</td>
+              <td>john@example.com</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+
+
+

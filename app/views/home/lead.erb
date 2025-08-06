@@ -1,0 +1,192 @@
+<h3><%= @lead.name %>
+</h3><hr/>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <td>שם</td>
+              <td><%= @lead.name %></td>
+            </tr>
+
+            <tr>
+              <td>תעודת זהות</td>
+              <td><%= @lead.uid %></td>
+            </tr>
+
+            <tr>
+              <td>כתובת</td>
+              <td><%= @lead.address %></td>
+            </tr>
+
+            <tr>
+              <td>רמת סיכון</td>
+              <td><%= @lead.risk_level %></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class='card'>
+      <div class='card-header d-sm-flex pt-sm-0 pb-0'>
+        <div class='sms-sm-auto'>
+          <ul class='nav nav-tabs nav-tabs-underline mb-0' role='tablist'>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-pic-1'
+                class='nav-link active'
+                data-bs-toggle='tab'
+                aria-selected='true'
+                role='tab'
+              >
+                <%= "תמונה 1" %>
+              </a>
+            </li>
+
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-pic-2'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <%= "תמונה 2" %>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class='card-body tab-content'>
+        <div class='tab-pane fade show active' id='card-pic-1' role='tabpanel'>
+          <%= image_tag @lead.picture_a.to_s, width: "100%" %>
+        </div>
+
+        <div class='tab-pane fade' id='card-pic-2' role='tabpanel'>
+          <%= image_tag @lead.picture_b.to_s, width: "100%" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class='card'>
+      <div class='card-header d-sm-flex pt-sm-0 pb-0'>
+        <div class='sms-sm-auto'>
+          <ul class='nav nav-tabs nav-tabs-underline mb-0' role='tablist'>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-activities'
+                class='nav-link active'
+                data-bs-toggle='tab'
+                aria-selected='true'
+                role='tab'
+              >
+              <%= "שאלון" %>
+              </a>
+            </li>
+
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-aggrements'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <%= "חוזים" %>
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-partner'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <%= "פרטי השותף" %>
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-bank'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <%= "פרטי ההשקעה" %>
+              </a>
+            </li>
+            
+
+          </ul>
+        </div>
+      </div>
+
+      <div class='card-body tab-content'>
+        <div class='tab-pane fade show active' id='card-activities' role='tabpanel'>
+            <%= render "lead_questions"%>
+        </div>
+        <div class='tab-pane fade ' id='card-partner' role='tabpanel'>
+            <%= render "lead_partner"%>
+        </div>
+        <div class='tab-pane fade ' id='card-bank' role='tabpanel'>
+          <%= render "lead_bank"%>
+        </div>
+
+        <div class='tab-pane fade' id='card-aggrements' role='tabpanel'>
+          <table class="table table-striped ">
+            <thead>
+              <tr>
+                <th>שם המעומד</th>
+                <th>שם הקובץ</th>
+                <th>תאריך חתימה</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for c in @lead.signed_contracts do %>
+                <tr>
+                  <td><%= c.lead.name %></td>
+                  <td><%= c.name %></td>
+                  <td><%= c.signed_at.strftime("%Y-%m-%d") unless c.signed_at.nil?%></td>
+                  <td class="text-end">
+                    <div class="dropdown">
+                      <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ph-list"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end" style="">
+                        <a
+                          href="<%= Rails.application.routes.url_helpers.rails_blob_path(c.pdf, only_path: true) %>"
+                          class="dropdown-item"
+                          target="BLANK"
+                        >
+                          <i class="ph-download me-2"></i>
+                          הורדת המסמך
+                        </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

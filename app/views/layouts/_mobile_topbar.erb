@@ -1,0 +1,117 @@
+
+<!-- Main navbar -->
+<div
+  class="
+    navbar navbar-dark navbar-expand-lg navbar-static border-bottom
+    border-bottom-black border-opacity-10
+  "
+>
+  <div class="container-fluid">
+    <div class="d-flex d-lg-none me-2">
+      <button type="button" class="navbar-toggler sidebar-mobile-main-toggle rounded">
+        <i class="fas fa-list"></i>
+      </button>
+    </div>
+
+    <div class="navbar-brand ">
+      <%= current_user.name%>
+    </div>
+
+    <div
+      class="
+        navbar-collapse justify-content-center flex-lg-1 order-2 order-lg-1 collapse
+        show
+      "
+      id="navbar_search"
+      style=""
+    >
+      <div class="navbar-search flex-fill position-relative mt-2 mt-lg-0 mx-lg-3">
+        <div
+          class="form-control-feedback form-control-feedback-start flex-grow-1"
+          data-color-theme="dark"
+        >
+          <input
+            id="search"
+            type="text"
+            class="form-control bg-transparent rounded-pill"
+            placeholder="חיפוש"
+            data-bs-toggle="dropdown"
+          >
+          <div class="form-control-feedback-icon">
+            <i class="ph-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <a
+          id="search-post"
+          class="
+            navbar-nav-link align-items-center justify-content-center w-40px h-32px
+            rounded-pill position-absolute end-0 top-50 translate-middle-y p-0 me-1
+          "
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="outside"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <div
+      class="navbar-collapse order-2 order-lg-1 collapse"
+      id="navbar-mobile"
+      style=""
+    >
+      <ul class="navbar-nav mt-2 mt-lg-0">
+
+      </ul>
+    </div>
+
+    <ul class="nav gap-sm-2 order-1 order-lg-2 ms-auto">
+
+      <li class="nav-item nav-item-dropdown-lg dropdown">
+        <a
+          href="#"
+          class="navbar-nav-link align-items-center rounded p-1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <div class="status-indicator-container">
+            <img src="/assets/face10.jpg" class="w-32px h-32px rounded" alt="">
+            <span class="status-indicator bg-success"></span>
+          </div>
+          <span class="d-none d-lg-inline-block mx-lg-2"><%= current_user.name%></span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-end">
+            <a href="/web/set_theme?theme=light" class="dropdown-item">
+            <i class="fa-solid fa-sun"></i>
+            &nbsp; <%= _t "תבנית בהירה" %>
+          </a>
+          <a href="/web/set_theme?theme=dark" class="dropdown-item"><i class="fa-solid fa-moon"></i>
+            &nbsp; <%= _t "תבנית כהה" %>
+          </a>
+          <a href="/web/set_language?language=Hebrew" class="dropdown-item"><i class="fa-solid fa-moon"></i>
+            &nbsp; <%= _t "עברית" %>
+          </a>
+          <a href="/web/set_language?language=English" class="dropdown-item"><i class="fa-solid fa-moon"></i>
+            &nbsp; <%= _t "English" %>
+          </a>
+          <div class="dropdown-divider"></div>
+           <a href="/users/sign_out" class="dropdown-item"><i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+            &nbsp; <%= _t "יציאה" %>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- /main navbar -->
+
+
+<script>
+
+   document.getElementById('search-post').onclick = function(e){
+     window.location.href = "/mobile/search?q=" + document.getElementById("search").value;
+  };
+</script>

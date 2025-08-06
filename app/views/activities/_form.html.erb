@@ -1,0 +1,23 @@
+
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :driver_id %>
+    <%= f.input :ride_id %>
+    <%= f.input :device_id %>
+    <%= f.input :level %>
+    <%= f.input :message %>
+    <%= f.input :settings %>
+    <%= f.input :location %>
+    <%= f.input :speed %>
+    <%= f.input :heading %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

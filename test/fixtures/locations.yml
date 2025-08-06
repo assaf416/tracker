@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  icon_url: MyString
+  name: MyString
+  lat: MyString
+  longt: MyString
+  fleet_id: 1
+  radius_in_meters: MyString
+  category: MyString
+
+two:
+  kind: MyString
+  icon_url: MyString
+  name: MyString
+  lat: MyString
+  longt: MyString
+  fleet_id: 1
+  radius_in_meters: MyString
+  category: MyString

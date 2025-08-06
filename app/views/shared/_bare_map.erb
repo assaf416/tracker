@@ -1,0 +1,19 @@
+<%# Leaflet.tile_layer = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+# You can also use any other tile layer here if you don't want to use Cloudmade - see http://leafletjs.com/reference.html#tilelayer for more
+
+Leaflet.tile_layer = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+Leaflet.attribution = "Your attribution statement"
+Leaflet.max_zoom = 18 %>
+
+<style>
+    #map { height: 400px; width:100%; }
+</style>
+ <div id="map-bg" style="" dir="ltr">
+      <% pos = Activity.last %>
+      <% markers = [] %>
+      <% Activity
+        .all
+        .sample(10)
+        .each { |p| markers << { latlng: [p.lat, p.longt], popup: p.created_at } } %>
+      <%= map(center: { latlng: [pos.lat, pos.longt], zoom: 18 }, markers: markers) %>
+    </div>

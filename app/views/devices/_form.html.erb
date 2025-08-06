@@ -1,0 +1,26 @@
+
+<%= simple_form_for(@device) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :kind %>
+    <%= f.input :user_id %>
+    <%= f.input :name %>
+    <%= f.input :settings %>
+    <%= f.input :type %>
+    <%= f.input :model %>
+    <%= f.input :driver_id %>
+    <%= f.input :last_location %>
+    <%= f.input :last_location_at %>
+    <%= f.input :recent_message %>
+    <%= f.input :system_message %>
+    <%= f.input :error_id %>
+    <%= f.input :avatar %>
+    <%= f.input :ssid %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

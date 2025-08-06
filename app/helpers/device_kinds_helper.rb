@@ -1,0 +1,2 @@
+module DeviceKindsHelper
+end

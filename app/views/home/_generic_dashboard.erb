@@ -1,0 +1,296 @@
+  <div class="container-fluid">
+        <div class="row">
+
+            <!-- Main Content -->
+            <div class="col-md-12 col-lg-12 ms-sm-auto px-md-4 py-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Today</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Week</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Month</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <i class="bi bi-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Dashboard Tab -->
+                    <div class="tab-pane fade show active" id="dashboard">
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <div class="card text-white bg-primary mb-3">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-device-ssd card-icon"></i>
+                                        <h5 class="card-title">Active Devices</h5>
+                                        <h2 class="card-text">142</h2>
+                                        <small>12 new today</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-white bg-success mb-3">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-people card-icon"></i>
+                                        <h5 class="card-title">Active Drivers</h5>
+                                        <h2 class="card-text">87</h2>
+                                        <small>5 on duty</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-white bg-warning mb-3">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-geo-alt card-icon"></i>
+                                        <h5 class="card-title">Active Rides</h5>
+                                        <h2 class="card-text">24</h2>
+                                        <small>3 delayed</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-white bg-danger mb-3">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-exclamation-triangle card-icon"></i>
+                                        <h5 class="card-title">Alerts</h5>
+                                        <h2 class="card-text">5</h2>
+                                        <small>2 critical</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="bi bi-map me-2"></i>Live Tracking Map
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="map-container">
+                                            <!-- Map will be rendered here -->
+                                            <div class="d-flex justify-content-center align-items-center h-100">
+                                                <div class="text-center">
+                                                    <i class="bi bi-map" style="font-size: 3rem;"></i>
+                                                    <p>Map View</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="bi bi-activity me-2"></i>Recent Activities
+                                    </div>
+                                    <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                <div class="ms-2 me-auto">
+                                                    <div class="fw-bold">Device #4578</div>
+                                                    Location updated
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill">2 min ago</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                <div class="ms-2 me-auto">
+                                                    <div class="fw-bold">Driver Moshe</div>
+                                                    Started ride #1245
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill">15 min ago</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                <div class="ms-2 me-auto">
+                                                    <div class="fw-bold">Device #1245</div>
+                                                    Low battery warning
+                                                </div>
+                                                <span class="badge bg-warning rounded-pill">32 min ago</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                <div class="ms-2 me-auto">
+                                                    <div class="fw-bold">Ticket #784</div>
+                                                    Delivery completed
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill">1 hour ago</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                <div class="ms-2 me-auto">
+                                                    <div class="fw-bold">Device #7845</div>
+                                                    Geofence alert - exited zone
+                                                </div>
+                                                <span class="badge bg-danger rounded-pill">2 hours ago</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="bi bi-calendar-event me-2"></i>Today's Schedule
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Driver</th>
+                                                    <th>Route</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>08:00</td>
+                                                    <td>David Cohen</td>
+                                                    <td>School Bus #45</td>
+                                                    <td><span class="badge bg-success">On Time</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>09:30</td>
+                                                    <td>Moshe Levy</td>
+                                                    <td>Delivery #1245</td>
+                                                    <td><span class="badge bg-warning">Delayed</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10:15</td>
+                                                    <td>Sarah Ben</td>
+                                                    <td>Taxi Ride #784</td>
+                                                    <td><span class="badge bg-success">In Progress</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11:45</td>
+                                                    <td>Jacob Mizrahi</td>
+                                                    <td>Asset Inspection</td>
+                                                    <td><span class="badge bg-info">Scheduled</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <span><i class="bi bi-exclamation-triangle me-2"></i>Alerts</span>
+                                        <button class="btn btn-sm btn-outline-secondary">View All</button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                            <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                                            <div>
+                                                <strong>Emergency!</strong> Ambulance #45 needs assistance
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                            <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                                            <div>
+                                                <strong>Warning!</strong> Device #7845 battery critical (8%)
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                            <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                                            <div>
+                                                <strong>Delay!</strong> Delivery #1245 is 25 minutes behind schedule
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-info d-flex align-items-center" role="alert">
+                                            <i class="bi bi-info-circle-fill flex-shrink-0 me-2"></i>
+                                            <div>
+                                                <strong>Maintenance Due:</strong> Asset #457 needs service
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Devices Tab -->
+                    <div class="tab-pane fade" id="devices">
+                        <h2>Device Management</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Last Seen</th>
+                                        <th>Battery</th>
+                                        <th>Driver</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#4578</td>
+                                        <td><span class="badge bg-primary">Mobile Unit</span></td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>2 minutes ago</td>
+                                        <td>
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 85%">85%</div>
+                                            </div>
+                                        </td>
+                                        <td>David Cohen</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
+                                            <button class="btn btn-sm btn-outline-info"><i class="bi bi-map"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1245</td>
+                                        <td><span class="badge bg-info">Smart Watch</span></td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>15 minutes ago</td>
+                                        <td>
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 32%">32%</div>
+                                            </div>
+                                        </td>
+                                        <td>Moshe Levy</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
+                                            <button class="btn btn-sm btn-outline-info"><i class="bi bi-map"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#7845</td>
+                                        <td><span class="badge bg-secondary">Industrial Unit</span></td>
+                                        <td><span class="badge bg-danger">Alert</span></td>
+                                        <td>2 hours ago</td>
+                                        <td>
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 8%">8%</div>
+                                            </div>
+                                        </td>
+                                        <td>Jacob Mizrahi</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
+                                            <button class="btn btn-sm btn-outline-info"><i class="bi bi-map"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Other tabs would go here -->
+                    <div class="tab-pane fade" id="drivers">Drivers Content</div>
+                    <div class="tab-pane fade" id="rides">Rides & Tickets Content</div>
+                    <div class="tab-pane fade" id="messages">Messages Content</div>
+                    <div class="tab-pane fade" id="assets">Assets Content</div>
+                    <div class="tab-pane fade" id="reports">Reports Content</div>
+                    <div class="tab-pane fade" id="settings">Settings Content</div>
+                </div>
+            </div>
+        </div>
+    </div>

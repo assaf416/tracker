@@ -1,0 +1,69 @@
+<% @page_header =  "Rides "%>
+<div class="row">
+  <div class="col-lg-12">
+    <div class='card'>
+      <div class='card-header'>
+        <div class='card-title'>
+          <h6>
+            <i class= "fas fa-home"></i>
+            <%= "Rides" %>
+          </h6>
+        </div>
+      </div>
+      <div class='card-body scrollable'>
+        <table class="table table-condensed table-striped datatable">
+          <thead>
+            <tr>
+                              <th><%= "Driver"  %></th>
+                              <th><%= "Customer"  %></th>
+                              <th><%= "From location"  %></th>
+                              <th><%= "From address"  %></th>
+                              <th><%= "Accpeted at"  %></th>
+                              <th><%= "Arrived to customer at"  %></th>
+                              <th><%= "Dropped at"  %></th>
+                              <th><%= "Drop location"  %></th>
+                              <th><%= "Pickup location"  %></th>
+                              <th><%= "Status"  %></th>
+                              <th><%= "Error message"  %></th>
+                            <th class='actions-th' ></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @rides.each do |ride| %>
+            <tr>
+                              <td><%= ride.driver_id %></td>
+                              <td><%= ride.customer_id %></td>
+                              <td><%= ride.from_location %></td>
+                              <td><%= ride.from_address %></td>
+                              <td><%= ride.accpeted_at %></td>
+                              <td><%= ride.arrived_to_customer_at %></td>
+                              <td><%= ride.dropped_at %></td>
+                              <td><%= ride.drop_location %></td>
+                              <td><%= ride.pickup_location %></td>
+                              <td><%= ride.status %></td>
+                              <td><%= ride.error_message %></td>
+                            <td class="text-end">
+                <div class="dropdown">
+                  <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; עריכה
+                    <a href="#" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; מחיקה
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,30 @@
+<%= render "driver_header"%>
+<% @drivers = Driver.all.sample(4)%>
+<div class="row">
+  <div class="col-lg-9">
+    <div class="card">
+      <div class="card-header">
+        Header
+      </div>
+      <div class="card-body">
+        <%= render "fancy_drivers"%>
+       </div>
+      <div class="card-footer">
+        Footer
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+     <div class="card">
+       <div class="card-header">
+         Driver Recent Location
+       </div>
+       <div class="card-body">
+         <%= render "shared/bare_map" %>
+        </div>
+       <div class="card-footer">
+         Footer
+       </div>
+     </div>
+  </div>
+</div>

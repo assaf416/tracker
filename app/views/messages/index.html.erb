@@ -1,0 +1,53 @@
+<% @page_header =  "Messages "%>
+<div class="row">
+  <div class="col-lg-12">
+    <div class='card'>
+      <div class='card-header'>
+        <div class='card-title'>
+          <h6>
+            <i class= "fas fa-home"></i>
+            <%= "Messages" %>
+          </h6>
+        </div>
+      </div>
+      <div class='card-body scrollable'>
+        <table class="table table-condensed table-striped datatable">
+          <thead>
+            <tr>
+                              <th><%= "Driver"  %></th>
+                              <th><%= "Message"  %></th>
+                              <th><%= "To driver"  %></th>
+                            <th class='actions-th' ></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @messages.each do |message| %>
+            <tr>
+                              <td><%= message.driver_id %></td>
+                              <td><%= message.message %></td>
+                              <td><%= message.to_driver_id %></td>
+                            <td class="text-end">
+                <div class="dropdown">
+                  <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; עריכה
+                    <a href="#" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; מחיקה
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

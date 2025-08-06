@@ -1,0 +1,112 @@
+<!-- Main sidebar -->
+<%= content_for :sidebar do%>
+<div
+  class="
+    sidebar sidebar-main sidebar-dark sidebar-expand-lg sidebar-main-resized
+  "
+>
+  <!-- Sidebar content -->
+  <div class="sidebar-content ">
+    <!-- Sidebar header -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-body d-flex justify-content-center">
+        <h5 class="sidebar-resize-hide flex-grow-1 my-auto">תפריט</h5>
+
+        <div>
+
+          <a type="button" class="btn btn-icon sidebar-mobile-main-toggle d-lg-none">
+            <i class="fa-solid fa-xmark text-white"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- /sidebar header --> <!-- Main navigation -->
+    <div class="sidebar-section">
+      <ul class="nav nav-sidebar" data-nav-type="accordion">
+        <!-- Main -->
+        <li class="nav-item">
+          <a href="/mobile/home" class="nav-link">
+            <i class="fa-solid fa-home"></i>
+            <span><%= _t "ראשי"%></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/mobile/employees" class="nav-link">
+            <i class="fa-solid fa-users text-success"></i>
+            <span><%= _t "עובדים"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/employees?v=to_update" class="nav-link">
+            <i class="fa-solid fa-users-gear text-info"></i>
+            <span><%= _t "עדכני עובדים"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/policies?v=open" class="nav-link">
+            <i class="fa-solid fa-user-shield text-info"></i>
+            <span><%= _t "פוליסות לפתיחה"%></span>
+          </a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a href="/mobile/policies?v=to_cancel" class="nav-link">
+            <i class="fa-solid fa-user-shield text-warning"></i>
+            <span><%= _t "פוליסות לביטול"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/policies?v=rejected" class="nav-link">
+            <i class="fa-solid fa-user-shield text-danger"></i>
+            <span><%= _t "פוליסות שנדחו"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/policies?v=pending" class="nav-link">
+            <i class="fa-solid fa-user-shield text-warning"></i>
+            <span><%= _t "פוליסות בברור"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/medical_forms" class="nav-link">
+            <i class="fa-solid fa-file-medical text-info"></i>
+            <span><%= _t "שאלונים רפואיים"%></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/mobile/injury_reports" class="nav-link">
+            <i class="fa-solid fa-file-medical text-info"></i>
+            <span><%= _t "דיווחי תאונות"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/documents" class="nav-link">
+            <i class="fa-solid fa-file-contract text-info"></i>
+            <span><%= _t  "מסמכים"%></span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/mobile/messages" class="nav-link">
+            <i class="fa-solid fa-comments text-info"></i>
+            <span><%= _t  "הודעות"%></span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- /main navigation -->
+  </div>
+
+  <!-- /sidebar content -->
+</div>
+<!-- /main sidebar -->
+<% end %>

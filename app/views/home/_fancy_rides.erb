@@ -1,0 +1,82 @@
+<div class="table-responsives">
+  <table class="table text-nowrap datatable">
+    <thead>
+      <tr>
+        <th style="width: 50px">Estimation</th>
+        <th style="width: 50px;">People</th>
+        <th style="width: 100px;">Kind</th>
+        <th style="width: 100px;">Progress</th>
+        <th>Description</th>
+        <th class="text-center" style="width: 20px;">
+          <i class="ph-dots-three"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for s in @rides do %>
+        <tr>
+          <td class="text-center">
+            <h6 class="mb-0"><%= 12 %></h6>
+          </td>
+          <td>
+              <%= image_tag s.driver.image_url , :size => "40x40" unless s.driver.nil?%>
+            </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <div>
+                <div class="d-flex align-items-center text-muted fs-sm">
+                  <span class="bg-danger rounded-pill p-1 me-2"></span>
+                  <%= s.status %> 
+                </div>
+                <%= s.from_location %>
+              </div>
+            </div>
+          </td>
+          <td>
+             <%= s.status%>
+            <div class="progress">
+								<div class="progress-bar bg-teal" style="width: <%=30%>%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">30</div>
+							</div>
+          </td>
+       
+          <td>
+            <a href="" class="text-body">
+              <div class="fw-semibold">[#<%= s.id %>]
+                <%= s.id %></div>
+              <span class="text-muted"><%= link_to  s.status , "/home/ride?id=#{s.id}" %></span>
+            </a>
+          </td>
+          <td class="text-center">
+            <div class="dropdown">
+              <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="ph-list"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end" style="">
+                <a href="/stories/<%=s.id%>/move_to_backlog" class="dropdown-item">
+                  <i class="ph-clock-counter-clockwise me-2"></i>
+                  Move to Back Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <% for u in @drivers do %>
+                  <a href="" class="dropdown-item">
+                  <i class="ph-clock-counter-clockwise me-2"></i>
+                  Assign to <%=u.name%>
+                </a>
+                <% end %>
+                <div class="dropdown-divider"></div>
+                <a href="/stories/<%=s.id%>/edit" class="dropdown-item">
+                  <i class="ph-checks text-success me-2"></i>
+                  Edit Story
+                </a>
+                <a href="/stories/<%=s.id%>/remove" class="dropdown-item">
+                  <i class="ph-x text-danger me-2"></i>
+                  Delete Story
+                </a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

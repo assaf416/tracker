@@ -1,0 +1,102 @@
+<% @page_header = "Driver info" %>
+<div class="row">
+  <div class="col-lg-4">
+    <div class='card'> 
+      <!-- Add the bg color to the header using any of the bg-* classes -->
+      <div class='card-header'>
+        <br/>
+        <br/>
+        <i class="fas fa-user-circle fa-3x"></i>
+        <h3 class="">@account.ib_account_id  </h3>
+        <h5 class="widget-user-desc">@account.account_type</h5>
+        <button class="btn btn-warning"> <i class="fa fa-phone"></i> </button>
+        <%= link_to raw("<i class='fa fa-calendar'></i> "), "", :class => "btn btn-success followup-dialog"  %>
+        <!-- Tickets -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          &nbsp;
+        </div>
+      </div>
+      <div class="card-footer text-center">
+        <div class="row">
+          
+                      
+              
+              <div class="col-sm-4">
+                <div class="description-block">
+                  <h5 class="description-header text-bold"><%= @driver.name %></h5>
+                  <span class="description-text">Name </span>
+                </div>
+                <!-- /.description-block -->
+              </div>
+              <!-- /.col -->
+                                  
+              
+              <div class="col-sm-4">
+                <div class="description-block">
+                  <h5 class="description-header text-bold"><%= @driver.device_id %></h5>
+                  <span class="description-text">Device </span>
+                </div>
+                <!-- /.description-block -->
+              </div>
+              <!-- /.col -->
+                                  
+              
+              <div class="col-sm-4">
+                <div class="description-block">
+                  <h5 class="description-header text-bold"><%= @driver.starts_at %></h5>
+                  <span class="description-text">Starts at </span>
+                </div>
+                <!-- /.description-block -->
+              </div>
+              <!-- /.col -->
+                                                                                                </div>
+        <br/>
+        <br/>
+        <!-- /.row -->
+      </div>
+      <div class="card-footer">
+                  <ul class="nav nav-stacked">
+            <li><a href="#">Name <span class="pull-right"> <%= @driver.name %></span></a></li>
+          </ul>
+                  <ul class="nav nav-stacked">
+            <li><a href="#">Device <span class="pull-right"> <%= @driver.device_id %></span></a></li>
+          </ul>
+                  <ul class="nav nav-stacked">
+            <li><a href="#">Starts at <span class="pull-right"> <%= @driver.starts_at %></span></a></li>
+          </ul>
+                  <ul class="nav nav-stacked">
+            <li><a href="#">Last message <span class="pull-right"> <%= @driver.last_message %></span></a></li>
+          </ul>
+                  <ul class="nav nav-stacked">
+            <li><a href="#">Last location <span class="pull-right"> <%= @driver.last_location %></span></a></li>
+          </ul>
+                  <ul class="nav nav-stacked">
+            <li><a href="#">Locationed at <span class="pull-right"> <%= @driver.locationed_at %></span></a></li>
+          </ul>
+              </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card">
+      <div class=card-body">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#notes" data-toggle="tab">Notes</a></li>
+            <li><a href="#info" data-toggle="tab">Info </a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="active tab-pane" id="activity">
+            </div>
+            <div class="tab-pane" id="trades">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

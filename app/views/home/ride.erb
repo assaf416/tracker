@@ -1,0 +1,108 @@
+<%= render "ride_header"%>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        Ride Info
+      </div>
+      <div class="card-body">
+       <%= render "/shared/rides_short_with_distance" %>
+         <%= render "/shared/rides_deliveries_with_buttons_short"%>
+         <%= render "/shared/taxi_rides_to_accept_short"%>
+       </div>
+      <div class="card-footer">
+        Footer
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class='card'>
+      <div class='card-header d-sm-flex pt-sm-0 pb-0'>
+        <h6 class='align-self-sm-center mb-sm-0'> כותרת</h6>
+        <div class='ms-sm-auto'>
+          <ul
+            class='nav nav-tabs nav-tabs-highlight card-header-tabs mb-0'
+            role='tablist'
+          >
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab1'
+                class='nav-link active'
+                data-bs-toggle='tab'
+                aria-selected='true'
+                role='tab'
+              >
+                <i class='ph-house me-2'></i>
+                ראשי
+              </a>
+            </li>
+            <li class='nav-item' role='presentation'>
+              <a
+                href='#card-tab2'
+                class='nav-link'
+                data-bs-toggle='tab'
+                aria-selected='false'
+                tabindex='-1'
+                role='tab'
+              >
+                <i class='ph-chart-bar me-2'></i>
+                הודעות
+              </a>
+            </li>
+            <li class='nav-item dropdown' role='presentation'>
+              <a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'>
+                <i class='ph-gear'></i>
+              </a>
+    
+              <div class='dropdown-menu dropdown-menu-end'>
+                <a
+                  href='#card-tab3'
+                  tabindex='-1'
+                  class='dropdown-item'
+                  data-bs-toggle='tab'
+                  aria-selected='false'
+                  role='tab'
+                >
+                  <i class='ph-user me-2'></i>
+                  Profile settings
+                </a>
+                <a
+                  href='#card-tab4'
+                  tabindex='-1'
+                  class='dropdown-item'
+                  data-bs-toggle='tab'
+                  aria-selected='false'
+                  role='tab'
+                >
+                  <i class='ph-stack me-2'></i>
+                  Layout settings
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class='card-body tab-content'>
+        <div class='tab-pane fade show active' id='card-tab1' role='tabpanel'>
+            <%#= render "/shared/drivers_short" %>
+          
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab2' role='tabpanel'>
+           <%= render "/shared/activities_alerts_wide" %>
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab3' role='tabpanel'>
+          This is the third card tab content
+        </div>
+    
+        <div class='tab-pane fade' id='card-tab4' role='tabpanel'>
+          This is the fourth card tab content
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

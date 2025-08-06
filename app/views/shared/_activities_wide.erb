@@ -1,0 +1,44 @@
+<table class="table table-condensed table-striped datatable">
+          <thead>
+            <tr>
+              <th><%= "Level"  %></th>
+              <th><%= "Kind"  %></th>
+              <th><%= "Message"  %></th>
+              <th><%= "Settings"  %></th>
+              <th><%= "Location"  %></th>
+              <th><%= "Speed"  %></th>
+              <th><%= "Heading"  %></th>
+              <th><%= "Status"  %></th>
+            <th class='actions-th' ></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @activities.each do |activity| %>
+            <tr>
+              <td><%= activity.level %></td>
+              <td><%= activity.kind %></td>
+              <td><%= activity.message %></td>
+              <td><%= activity.settings %></td>
+              <td><%= activity.location %></td>
+              <td><%= activity.speed %></td>
+              <td><%= activity.heading %></td>
+              <td><%= activity.status %></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; עריכה
+                    <a href="#" class="dropdown-item">
+                      <i class="fa-solid fa-pencil"></i>
+                      &nbsp; מחיקה
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>

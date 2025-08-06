@@ -1,0 +1,215 @@
+<!-- Main navbar -->
+<div
+  class="
+    navbar navbar-dark navbar-expand-lg navbar-static border-bottom
+    border-bottom-black border-opacity-10
+  "
+>
+  <div class="container-fluid">
+    <div class="d-flex d-lg-none me-2">
+      <button type="button" class="navbar-toggler sidebar-mobile-main-toggle rounded">
+        <i class="fas fa-list"></i>
+      </button>
+    </div>
+
+    <div class="navbar-brand ">
+      Dalore Tracker
+    </div>
+
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      <li class="nav-item dropdown">
+        <a href="/home/index" class="navbar-nav-link rounded" aria-expanded="false">
+          <%= _t "Home" %></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a href="/home/map" class="navbar-nav-link rounded" aria-expanded="false"><%= _t "Map" %></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          href="#"
+          class="navbar-nav-link rounded dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ><%= _t "Fleet" %></a>
+        <div class="dropdown-menu">
+          <a href="/home/devices" class="dropdown-item">
+            Active Devices</a>
+          <a href="/home/map?v=alters" class="dropdown-item">
+            Warnings</a>
+          <a href="/home/activities" class="dropdown-item">Activities</a>
+          <a href="/home/drivers" class="dropdown-item">Drivers</a>
+          <a href="/home/rides" class="dropdown-item">Rides</a>
+          <a href="/home/devices" class="dropdown-item">Devices</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          href=""
+          class="navbar-nav-link rounded dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >Tools</a>
+        <div class="dropdown-menu">
+          <a href="/home/dashboard?v=devices" class="dropdown-item">Devices Dashboard</a>
+          <a href="/home/tickets" class="dropdown-item">Tickets</a>
+          <a href="/home/rides" class="dropdown-item">Geofences</a>
+          <a href="/home/rides" class="dropdown-item">Locations</a>
+        </div>
+       
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          href=""
+          class="navbar-nav-link rounded dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >Reports</a>
+        <div class="dropdown-menu">
+          <a href="/home/dashboard?v=generic" class="dropdown-item">Dashboard</a>
+          <a href="/home/dashboard?v=moked" class="dropdown-item">Moked 106</a>
+        </div>
+      </li>
+    </ul>
+
+    <div
+      class="
+        navbar-collapse justify-content-center flex-lg-1 order-2 order-lg-1 collapse
+        show
+      "
+      id="navbar_search"
+      style=""
+    >
+      <div class="navbar-search flex-fill position-relative mt-2 mt-lg-0 mx-lg-3">
+        <div
+          class="form-control-feedback form-control-feedback-start flex-grow-1"
+          data-color-theme="dark"
+        >
+          <input
+            type="text"
+            class="form-control bg-transparent rounded-pill"
+            placeholder="Search"
+            data-bs-toggle="dropdown"
+          >
+          <div class="form-control-feedback-icon">
+            <i class="ph-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <a
+          href="#"
+          class="
+            navbar-nav-link align-items-center justify-content-center w-40px h-32px
+            rounded-pill position-absolute end-0 top-50 translate-middle-y p-0 me-1
+          "
+          data-bs-toggle="dropdown"
+          data-bs-auto-close="outside"
+        >
+          <i class="ph-faders-horizontal"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="d-lg-none ms-2">
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar-mobile"
+        aria-expanded="false"
+      >
+        <i class="ph-squares-four"></i>
+      </button>
+    </div>
+
+    <ul class="nav gap-sm-2 order-1 order-lg-2 ms-auto">
+      <li class="nav-item dropdown">
+        <a
+          href="#"
+          class="navbar-nav-link rounded dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >Applications</a>
+        <div class="dropdown-menu">
+          <a href="/taxi_app/dispatcher" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-taxi me-1"></i>
+            Taxi Dispatcher</a>
+          <a href="/taxi_app/driver" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-taxi me-1"></i>
+            Taxi Driver</a>
+          <a href="/taxi_app/customers" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-taxi me-1"></i>
+            Taxi Customer</a>
+         <div class="dropdown-divider"></div>
+          <a href="/delivery_app/dispatcher" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-truck-ramp-box me-1"></i>Delivery Dispatcher</a>
+          <a href="/delivery_app/dispatcher" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-truck-ramp-box me-1"></i>Delivery Driver</a>
+          <a href="/delivery_app/Customer" target="BLANK" class="dropdown-item"><i class="fa-solid fa-truck-ramp-box me-1"></i>
+            Delivery Customer</a>
+            <div class="dropdown-divider"></div>
+          <a href="/c2_app/commander" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-person-rifle me-1"></i>
+            Battlefield
+          </a>
+          <a href="/c2_app/diver" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-person-rifle me-1"></i>
+            Commander phone
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/c2_app/commander" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-bus me-1"></i>
+            School bus
+          </a>
+          <a href="/c2_app/diver" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-bus me-1"></i>
+            Driver
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/c2_app/diver" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-bus me-1"></i>
+            Passenger
+          </a>
+          <a href="/c2_app/commander" target="BLANK" class="dropdown-item">
+            <i class="fa-solid fa-truck-monster me-1"></i>
+            Heavy Machinary
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item nav-item-dropdown-lg dropdown">
+        <a
+          href="#"
+          class="navbar-nav-link align-items-center rounded p-1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <div class="status-indicator-container">
+            <img src="/assets/face10.jpg" class="w-32px h-32px rounded" alt="">
+            <span class="status-indicator bg-success"></span>
+          </div>
+          <span class="d-none d-lg-inline-block mx-lg-2"><%= current_user.name %></span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-end">
+          <a href="/home/set_theme?theme=light" class="dropdown-item">
+            <i class="fa-solid fa-sun"></i>
+            &nbsp; תבנית בהירה
+          </a>
+          <a href="/home/set_theme?theme=dark" class="dropdown-item"><i class="fa-solid fa-moon"></i>
+            &nbsp; תבנית כהה
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="/users/sign_out" class="dropdown-item"><i class="fa-solid fa-person-walking-arrow-right"></i>
+            &nbsp; יציאה
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- /main navbar -->

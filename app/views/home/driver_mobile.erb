@@ -1,0 +1,99 @@
+<div class="card">
+  <div
+    class="card-body bg-primary text-white text-center card-img-top"
+    style="background-image: url(../../../assets/images/backgrounds/panel_bg.png); background-size: contain;"
+  >
+    <div class="card-img-actions d-inline-block mb-3">
+      <img
+        class="img-fluid rounded-circle"
+        src="<%= @driver.image_url%>"
+        width="170"
+        height="170"
+        alt=""
+      >
+      <div class="card-img-actions-overlay card-img rounded-circle">
+        <a href="#" class="btn btn-outline-white btn-icon rounded-pill">
+          <i class="ph-plus"></i>
+        </a>
+        <a
+          href="user_pages_profile.html"
+          class="btn btn-outline-white btn-icon rounded-pill ms-2"
+        >
+          <i class="ph-link"></i>
+        </a>
+      </div>
+    </div>
+
+    <h6 class="mb-0"><%= @driver.name%></h6>
+    <span class="opacity-75"><%=@driver.status%></span>
+
+    <ul class="list-inline list-inline-condensed mt-3 mb-0">
+      <li class="list-inline-item">
+        <a href="#" class="btn btn-outline-white btn-icon rounded-pill">
+          <i class="ph-github-logo"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#" class="btn btn-outline-white btn-icon rounded-pill">
+          <i class="ph-twitter-logo"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#" class="btn btn-outline-white btn-icon rounded-pill">
+          <i class="ph-gitlab-logo"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+ <div class='ms-sm-auto'>
+      <ul
+        class='nav nav-tabs nav-tabs-underline card-header-tabs mb-0'
+        role='tablist'
+      >
+        <li class='nav-item' role='presentation'>
+          <a
+            href='#card-tab1'
+            class='nav-link active'
+            data-bs-toggle='tab'
+            aria-selected='true'
+            role='tab'
+          >
+            <i class='ph-house me-2'></i>
+            Devices
+          </a>
+        </li>
+        <li class='nav-item' role='presentation'>
+          <a
+            href='#card-tab2'
+            class='nav-link'
+            data-bs-toggle='tab'
+            aria-selected='false'
+            tabindex='-1'
+            role='tab'
+          >
+            <i class='ph-chart-bar me-2'></i>
+            Messages
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  <div class='card-body tab-content'>
+    <div class='tab-pane fade show active' id='card-tab1' role='tabpanel'>
+        <%= render "shared/messages_short"%>
+    </div>
+
+    <div class='tab-pane fade' id='card-tab2' role='tabpanel'>
+     <%= render "shared/drivers_short"%>
+    </div>
+
+    <div class='tab-pane fade' id='card-tab3' role='tabpanel'>
+      This is the third card tab content
+    </div>
+
+    <div class='tab-pane fade' id='card-tab4' role='tabpanel'>
+      This is the fourth card tab content
+    </div>
+  </div>

@@ -1,0 +1,44 @@
+<h3>לידים</h3><hr/>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-striped datatable">
+          <thead>
+            <tr>
+              <th>מקור</th>
+              <th>תאריך</th>
+              <th>תעודת זהות</th>
+              <th>שם
+              </th>
+              <th>כתובת מייל</th>
+              <th>טלפון</th>
+              <th>כתובת</th>
+              <th>רמת סיכון</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for l in Lead.all do %>
+              <tr>
+
+                <td><%= l.source %></td>
+                <td><%= l.created_at.strftime("%Y-%m-%d") %></td>
+                <td><%= l.uid %></td>
+                <td><%= link_to l.name , "/home/lead?id=#{l.id}" %></td>
+                <td><%= l.email %></td>
+                <td><%= l.phone_no %></td>
+                <td><%= l.address %></td>
+                <td><%= l.risk_level %></td>
+                <td></td>
+
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

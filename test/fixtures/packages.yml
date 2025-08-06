@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver_id: 1
+  ride_id: 1
+  description: MyText
+  qr_code: MyText
+  picked_at: 2025-08-06 11:17:21
+  dropped_at: 2025-08-06 11:17:21
+  uid: MyString
+
+two:
+  driver_id: 1
+  ride_id: 1
+  description: MyText
+  qr_code: MyText
+  picked_at: 2025-08-06 11:17:21
+  dropped_at: 2025-08-06 11:17:21
+  uid: MyString

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<% if current_user.nil? %>
+  <% dir = "LTR" %>
+<% else%>
+  <% if current_user.language == "English" %>
+    <% dir = "LTR"%>
+  <% else %>
+    <% dir = "RTL"%>
+    <% end  %>
+<% end %>
+
+<html lang="he" dir="<%= dir%>" class="layout-static">
+  <head>
+    <title><%= "Dalore Tracker" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="ImpactKYC">
+  <meta name="apple-mobile-web-app-title" content="ImpactKYC">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/assets/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/icon.png">
+    <script src="https://kit.fontawesome.com/02d4d4b7a0.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag :app %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= javascript_importmap_tags %>
+
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jSignature/2.1.3/jSignature.min.js" integrity="sha512-lZ7GJNAmaXw7L4bCR5ZgLFu12zSkuxHZGPJdIoAqP6lG+4eoSvwbmKvkyfauz8QyyzHGUGVHyoq/W+3gFHCLjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/phosphor-icons@2.1.1/src/index.min.js"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/phosphor-icons@2.1.1/src/css/icons.min.css"
+      rel="stylesheet"
+    >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href= '/assets/favicon/favicon-32x32.png'
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    >
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#202125">
+    
+
+    <!-- LEAFLET -->
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+    <title> Dalore Tracker</title>
+    <% if dir == "LTR"%>
+      <%= render "/layouts/css" %>
+    <% else%>
+      <%= render "/layouts/css_he" %>
+    <% end %>
+    <%= render "/layouts/js" %>
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap"
+      rel="stylesheet"
+    >
+  
+
+    <style>
+        body , h1, h2, h3, h4, h5, h6,p {
+          font-family: "Assistant", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        .border-right{
+          border-right:2px solid #F1f1f1
+        }
+        .text-bold{
+          font-weight: bold;
+        }
+
+        .scrolabble{
+          height: calc(100vh - 130px);
+          box-sizing: border-box;
+           overflow-y: auto;
+          }
+        
+
+        .dark{
+          background-color: #08090a;
+        }
+        .light{
+          background-color: #FFF;
+        }
+
+    </style>
+
+  </head>
+
+  <% if current_user.nil?
+    schema = "light"
+  else
+    schema = current_user.schema
+  end %>
+  <body data-color-theme="<%= schema %>">
+    <%= render "/layouts/mobile_topbar" unless current_user.nil? %>
+    <!-- Page content -->
+    <div class="page-content">
+      <%= yield :sidebar %>
+      <!-- Main content -->
+      <div class="content-wrapper" dir="<%= dir%>">
+        <!-- Inner content -->
+        <div class="content-inner scrolabble">
+          <%= yield :page_header %>
+          <%= render "shared/flash" %>
+          <!-- Content area -->
+          <div class="content bg-silver ">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br/><br/><br/><br/><br/>
+    <%= yield :footer%>
+  </body>
+
+      <script>
+      setTimeout(function () {
+          window.location.href = "/users/sign_out"
+         }, 900000); // Logout after 15 miniutes idle.
+    </script>
+</html>

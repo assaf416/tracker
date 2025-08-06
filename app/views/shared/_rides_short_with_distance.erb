@@ -1,0 +1,35 @@
+<table class="table table-condensed table-striped ">
+  <tbody>
+    <% @rides = Ride.all %>
+    <% @rides.each do |r| %>
+      <tr>
+        <td><%= image_tag r.driver.image_url, size: "50x50" %></td>
+        <td><h6><%= rand(100) %> km </h6></td>
+        <td><%= r.driver.name %></td>
+        <td class="text-end">
+          <div class="dropdown">
+            <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-bars"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" style="">
+              <a href="" class="dropdown-item">
+                <i class="fa-solid fa-map-location"></i>
+                &nbsp;
+                <%= _t "Show on map" %>
+              </a>
+              <a href="" class="dropdown-item">
+                <i class="fa-solid fa-bell-slash"></i>
+                &nbsp;
+                <%= _t "Close Alert" %>
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="fa-solid fa-ticket me-1"></i>
+                <%= _t "Open Ticket" %>
+              </a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

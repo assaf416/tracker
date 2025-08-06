@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ride_id: 1
+  fleet_id: 1
+  device_id: 1
+  passenger_id: 1
+  name: MyString
+  kind: MyString
+  content_base_64: MyText
+  driver_id: 1
+  package_id: 1
+
+two:
+  ride_id: 1
+  fleet_id: 1
+  device_id: 1
+  passenger_id: 1
+  name: MyString
+  kind: MyString
+  content_base_64: MyText
+  driver_id: 1
+  package_id: 1

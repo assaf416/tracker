@@ -1,0 +1,2 @@
+module Apps::AssetsManagementHelper
+end

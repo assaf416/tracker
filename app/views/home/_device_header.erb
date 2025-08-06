@@ -1,0 +1,101 @@
+<% content_for :page_header do %>
+  <div class="page-header page-header-light shadow">
+    <div class="page-header-content d-lg-flex">
+      <div class="d-flex">
+        <h4 class="page-title mb-0">
+          <span class="fw-normal">
+            device:
+            <b><%= @device.name unless @device.nil? %></b></span>
+        </h4>
+      </div>
+
+      <div class="collapse d-lg-block my-lg-auto ms-lg-auto" id="page_header">
+
+        <div class="d-sm-flex align-items-center mb-3 mb-lg-0 ms-lg-3">
+
+          <div class="d-inline-flex mt-3 mt-sm-0">
+            <a href="/devices//monitor" class="btn btn-outline-primary ms-1">
+              <i class="ph-cards"></i>
+              Upgrade
+            </a>
+            <a href="/devices//plan" class="btn btn-outline-primary ms-1">
+              <i class="ph-shuffle"></i>
+              Restart
+            </a>
+          </div>
+          <div class="vr d-none d-sm-block flex-shrink-0 my-2 mx-3">
+          </div>
+          <% for m in [] do %>
+            <a href="/members/<%=m.id%>" class="status-indicator-container ms-1">
+              <img src="<%=m.image_url%>" class="w-32px h-32px rounded-pill" alt="">
+              <span class="status-indicator bg-warning"></span>
+            </a>
+          <% end %>
+          <div class="vr d-none d-sm-block flex-shrink-0 my-2 mx-3">
+          </div>
+          <a
+            href="/devices/<%=%>/stories/new"
+            class="btn btn-outline-primary ms-1"
+          >
+            <i class="fa fa-book-plus"></i>
+            New Story
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-header-content d-lg-flex border-top">
+      <div class="d-flex">
+        
+        <div class="breadcrumb py-2">
+          <% if @device.present?%>
+          <a href="/devices/<%=@device.id%>" class="breadcrumb-item"><i class="ph-house"></i></a>
+          <a href="/devices/<%=@device.id%>/iterations" class="breadcrumb-item">Driver</a>
+          <a href="/devices/<%=@device.id%>/stories" class="breadcrumb-item">Activities</a>
+          <a href="/devices/<%=@device.id%>/stories" class="breadcrumb-item">Errors</a>
+          <a href="/devices/<%=@device.id%>/activities" class="breadcrumb-item">Files</a>
+          <% else %>
+          <a href="/home/devices/" class="breadcrumb-item"><i class="ph-house"></i></a>
+          <a href="/home/devices?v=all" class="breadcrumb-item">All</a>
+          <a href="/home/devices?v=alert" class="breadcrumb-item">Alerts</a>
+          <a href="/home/devices?v=moved" class="breadcrumb-item">Recently Moved</a>
+          <% end %>
+        </div>
+
+        <a
+          href="#breadcrumb_elements"
+          class="
+            btn btn-light align-self-center collapsed d-lg-none border-transparent
+            rounded-pill p-0 ms-auto
+          "
+          data-bs-toggle="collapse"
+        >
+          <i class="ph-caret-down collapsible-indicator ph-sm m-1"></i>
+        </a>
+      </div>
+
+      <div class="collapse d-lg-block ms-lg-auto" id="breadcrumb_elements">
+        <div class="d-lg-flex mb-2 mb-lg-0">
+
+          <a
+            href="/devices/<%#=@device.id%>/messages"
+            class="d-flex align-items-center text-body py-2"
+          >
+            <i class="fas fa-map me-1"></i>
+            Map
+          </a>
+          &nbsp; &nbsp; &nbsp;
+          <a
+            href="https://meet.jit.si/demovideocall"
+            target="BLANK"
+            class="d-flex align-items-center text-body py-2"
+          >
+            <i class="ph-video-camera me-2"></i>
+            Video
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

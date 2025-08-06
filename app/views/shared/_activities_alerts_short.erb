@@ -1,0 +1,38 @@
+<table class="table table-condensed table-striped ">
+          <thead>
+            <tr>
+              <th width="50px"></th>
+              <th><%= "Level"  %></th>
+              <th class='actions-th' ></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @activities.each do |activity| %>
+            <tr>
+              <td><i class="fa-solid fa-bell fa-2x"></i></td>
+              <td><%= activity.message %></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="" class="dropdown-item">
+                     <i class="fa-solid fa-map-location"></i>
+                      &nbsp; <%= _t 'Show on map' %>
+                      </a>
+                    <a href="" class="dropdown-item">
+                      <i class="fa-solid fa-bell-slash"></i>
+                      &nbsp; <%= _t 'Close Alert' %>
+                      </a>
+                    <a href="#" class="dropdown-item">
+                      <i class="fa-solid fa-ticket me-1"></i>
+                      <%= _t 'Open Ticket' %>
+                      </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>

@@ -1,0 +1,25 @@
+<table class="table table-condensed table-striped ">
+  <tbody>
+    <% @rides = Ride.all %>
+    <% @rides.each do |r| %>
+      <tr>
+        <td><%= image_tag r.driver.image_url, size: "50x50" %></td>
+        <td><h6><%= rand(100) %>
+            km
+          </h6></td>
+        <td class="text-end">
+
+          <div>
+            <a type="button" class="btn btn-flat-success btn-sm rounded-pill">
+              <i class="ph-at ph-sm me-2"></i>
+             Accepted!
+            </a>
+            <a type="button" class="btn btn-flat-danger btn-sm rounded-pill">
+              <i class="ph-at ph-sm me-2"></i><%= _t 'Rejected' %>
+            </a>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,93 @@
+<%= render "device_header" %>
+<% @drivers = Driver.all.limit(4) %>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        Device Recent Location
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <%= render "shared/bare_map_mini" %>
+          </div>
+          <div class="col-lg-4">
+            <%= image_tag "https://static.vecteezy.com/system/resources/previews/013/129/494/non_2x/abstract-black-glossy-background-illustration-with-gradient-design-modern-screen-design-for-mobile-app-web-infographic-brochure-free-vector.jpg",
+            width: "100%" %>
+            <br/>
+            <table class="table ">
+              <tbody>
+                <tr>
+                  <td><i class="fa-solid fa-location-dot"></i>
+                    <%= _t "Location" %></td>
+                  <td><%= @device.location %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="fa-solid fa-battery-half"></i>
+                    <%= _t "Battary" %></td>
+                  <td><%= @device.location %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <div>
+          <button type="button" class="btn btn-flat-primary btn-icon">
+            <i class="fa-solid fa-video"></i>
+          </button>
+          <button type="button" class="btn btn-flat-info btn-icon">
+            <i class="fa-solid fa-microphone-lines"></i>
+          </button>
+          <button type="button" class="btn btn-flat-danger btn-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+          <button type="button" class="btn btn-flat-danger btn-icon">
+            <i class="fa-solid fa-earth-americas"></i>
+          </button>
+          <button type="button" class="btn btn-flat-info btn-icon">
+            <i class="fa-solid fa-location-pin-lock"></i>
+          </button>
+          <button type="button" class="btn btn-flat-info btn-icon">
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+          <button type="button" class="btn btn-flat-info btn-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        Header
+      </div>
+      <div class="card-body">
+        <% @activities = Activity.all.sample(9)%>
+        <%= render "/shared/activities_alerts_short" %>
+       </div>
+      <div class="card-footer">
+        Footer
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header">
+        Header
+      </div>
+      <div class="card-body">
+        <%#= render "fancy_drivers" %>
+        <% @activities = Activity.all.sample(10)%>
+        <%#= render "/shared/activities_wide" %>
+        <%= render "/shared/activities_alerts_wide" %>
+      </div>
+    </div>
+
+  </div>
+</div>
